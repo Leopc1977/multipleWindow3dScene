@@ -9,6 +9,7 @@ class WindowManager
 	
 	constructor ()
 	{
+		console.log("Init WindowManager")
 		let that = this;
 
 		// event listener for when localStorage is changed from another window
@@ -100,7 +101,6 @@ class WindowManager
 
 	update ()
 	{
-		//console.log(step);
 		let winShape = this.getWinShape();
 
 		//console.log(winShape.x, winShape.y);
@@ -116,7 +116,6 @@ class WindowManager
 			let index = this.getWindowIndexFromId(this.#id);
 			this.#windows[index].shape = winShape;
 
-			//console.log(windows);
 			if (this.#winShapeChangeCallback) this.#winShapeChangeCallback();
 			this.updateWindowsLocalStorage();
 		}
